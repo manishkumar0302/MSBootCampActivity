@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+      uri: ${currencyms.configserverurl:http://192.168.99.100:8888}
+      fail-fast: false
+  application:
+    name: currencyms
+  profiles:    active: dev
+
+server:  port: 0
