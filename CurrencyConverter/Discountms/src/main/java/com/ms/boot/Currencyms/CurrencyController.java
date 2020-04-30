@@ -37,7 +37,7 @@ public class CurrencyController {
 		 */
 	}
 
-	@RequestMapping(value = "/calcurrency/{request}", method = RequestMethod.GET)
+	@RequestMapping(path = "/calcurrency", method = RequestMethod.GET)
 	public double calculateCurrency(@RequestBody CurrencyRequest request) {
 		log.info(request.toString());
 		String countryCode= request.getCountryCode();

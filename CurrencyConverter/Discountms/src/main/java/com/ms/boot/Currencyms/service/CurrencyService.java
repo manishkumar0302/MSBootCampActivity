@@ -28,7 +28,7 @@ public class CurrencyService {
 	Currencyserviceproxy currencyProxy;
 
 	public double convertCurrency(String id, double amount) {
-		double factorVal =currencyProxy.getConversionFactor(id);
+		double factorVal =currencyProxy.getConversionFactorControl(id);
 		double convertedAmount  = amount * factorVal;
 		return convertedAmount;
 	}

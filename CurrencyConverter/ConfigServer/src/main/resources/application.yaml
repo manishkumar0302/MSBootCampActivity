@@ -4,7 +4,7 @@ spring:
       server:
         git:
           #uri: C:\work\ksr\kolkata2020labsconfig
-          uri: https://github.com/prabhakarmishra/Newboot.git
+          uri: https://github.com/manishkumar0302/GitConfiguration.git
           #searchPaths: ConfigData
           skipSslValidation: true
     bus:

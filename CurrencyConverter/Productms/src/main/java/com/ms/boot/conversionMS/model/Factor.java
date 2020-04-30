@@ -23,9 +23,10 @@ public class Factor {
 	@Id
    @GeneratedValue
 	private Integer id;
-	@Column(name = "CountryCode", table = "conversion")
+	//@Column(name = "CountryCode", table = "conversion")
+	@Column(name = "CountryCode")
 	private String countryCode;
-	@Column(name = "ConversionFactor", table = "conversion")
+	//@Column(name = "ConversionFactor", table = "conversion")
 	private double convFactor;
 
 	/*

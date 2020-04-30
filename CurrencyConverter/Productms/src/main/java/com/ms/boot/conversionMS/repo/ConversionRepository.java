@@ -12,4 +12,6 @@ public interface ConversionRepository extends JpaRepository<Factor, Integer> {
 
 	Optional<Factor> findById(String id);
 
+	Optional<Factor> findByCountryCode(String id);
+
 }

@@ -22,7 +22,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 @Service
 @Component
 @RibbonClient(name = "currencyms")
-public class ConversionService {
+public class ConversionFactorService {
 	@Autowired
 	private ConversionRepository prepo;
 
@@ -44,9 +44,16 @@ public class ConversionService {
 	 */
 
 
-	@HystrixCommand(fallbackMethod = "getAllConversionValue")
+	 
+	public double getConversionFactorFallback(String id) {
+		
+		return 1.00;
+    
+	}
+	
+	@HystrixCommand(fallbackMethod = "getConversionFactorFallback")
 	public double getConversionFactor(String id) {
-		Optional<Factor> oFactor = prepo.findById(id);
+		Optional<Factor> oFactor = prepo.findByCountryCode(id);
 		if (oFactor.isPresent())
 			return oFactor.get().getconvFactor();
 		else
@@ -54,10 +61,7 @@ public class ConversionService {
     }
 	
 	
-	public double getConversionFactorFallback() {
-		
-			return 1.00;
-    }
+
 	
 	public Factor saveNewConversion(Factor factor) {
 		

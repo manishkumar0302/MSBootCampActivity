@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.ms.boot.conversionMS.model.Factor;
-import com.ms.boot.conversionMS.service.ConversionService;
+import com.ms.boot.conversionMS.service.ConversionFactorService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -22,13 +22,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping(path = "/conversion")
-public class ConversionController {
+public class ConversionFactorController {
 
 	@Autowired
-	ConversionService convService;
+	ConversionFactorService convService;
 
 	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
-	public double getConversionFactor(@PathVariable String id) {
+	public double getConversionFactorControl(@PathVariable String id) {
 
 		double p = convService.getConversionFactor(id);
 		if (p == 0.00) {

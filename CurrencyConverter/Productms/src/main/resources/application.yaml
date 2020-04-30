@@ -14,9 +14,9 @@ spring:
       settings:
         web-allow-others: true
   datasource:
-    url: ${conversionms.datasource.url}
-    username: ${conversionms.datasource.username}
-    password: ${conversionms.datasource.password}
+    url: "jdbc:h2:mem:productDb;DB_CLOSE_DELAY=-1"
+    username: "sa"
+    password: ""
     driver-class-name: org.h2.Driver
   jpa:
     properties:
@@ -52,7 +52,7 @@ eureka:
     fetchRegistry: true
     prefer-same-zone-eureka: true
     serviceUrl:
-      defaultZone: ${conversionms.eureka.url:http://192.168.99.100:8761/eureka}
+      defaultZone: ${conversionms.eureka.url:http://localhost:8761/eureka}
 
 feign:
   hystrix:

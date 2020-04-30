@@ -7,7 +7,7 @@ public class CurrencyRequest {
 	
 	
 	
-	public CurrencyRequest(String countrycode,double amount,double factor) {
+	public CurrencyRequest(String countrycode,double amount) {
 		super();
 		this.countrycode = countrycode;
 		this.amount = amount;

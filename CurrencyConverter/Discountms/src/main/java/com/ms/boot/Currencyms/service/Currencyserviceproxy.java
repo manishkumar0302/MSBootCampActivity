@@ -10,5 +10,5 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface Currencyserviceproxy {
 	
 	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
-	public double getConversionFactor(@PathVariable String id);
+	public double getConversionFactorControl(@PathVariable String id);
 }
