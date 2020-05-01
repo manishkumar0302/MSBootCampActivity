@@ -45,8 +45,12 @@ public class CurrencyController {
 		double convertedAmount = currService.convertCurrency(countryCode,amount);
 		return convertedAmount;
 	}
-
-
+  
+   
+	@RequestMapping(path="/", method=RequestMethod.GET)
+    public String returValueHello() {
+    	return "Hello World";
+    }
 	
 
 
