@@ -24,7 +24,7 @@ public class CurrencyRequest {
 	public String getCountryCode() {
 		return countrycode;
 	}
-	public void getCountryCode(String countrycode) {
+	public void setCountryCode(String countrycode) {
 		this.countrycode = countrycode;
 	}
 	public double getAmount() {

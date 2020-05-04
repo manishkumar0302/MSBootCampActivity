@@ -7,4 +7,5 @@ spring:
     name: cloudapigateway
   profiles:    active: dev
 
-server:  port: 9092
+server:
+  port: 9092
