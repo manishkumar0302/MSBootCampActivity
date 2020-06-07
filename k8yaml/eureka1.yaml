@@ -27,6 +27,6 @@ spec:
   selector:
     bb: web
   ports:
-  - port: 8082
-    targetPort: 8082
-    nodePort: 30003
+  - port: 8761
+    targetPort: 8761
+    nodePort: 30001
