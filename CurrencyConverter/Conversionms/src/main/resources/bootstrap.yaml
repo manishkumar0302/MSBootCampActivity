@@ -1,7 +1,7 @@
 spring:
   cloud:
     config:
-      uri: ${conversionms.configserverurl:http://192.168.99.100:8888}
+      uri: ${conversionms.configserverurl:http://kubernetes.docker.internal:8888}
       fail-fast: false
   application:
     name: conversionms

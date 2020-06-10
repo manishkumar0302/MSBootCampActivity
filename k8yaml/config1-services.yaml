@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: config1
+  labels:
+    app: config1
+spec:
+  selector:
+    app: config1
+  type: NodePort 
+  ports:
+   - nodePort: 31002
+     port: 8888
+     targetPort: 8888

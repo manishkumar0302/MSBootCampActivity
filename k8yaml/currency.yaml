@@ -7,26 +7,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      bb: web
+      app: currencyms
   template:
     metadata:
       labels:
-        bb: web
+        app: currencyms
     spec:
       containers:
       - name: currencyms
         image: "mkdockerhub1310/msbootcampactivity_2020:currencyms"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: currencyms
-  namespace: default
-spec:
-  type: NodePort
-  selector:
-    bb: web
-  ports:
-  - port: 8082
-    targetPort: 8082
-    nodePort: 30001
+        ports:
+        - containerPort: 8082

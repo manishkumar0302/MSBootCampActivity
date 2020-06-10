@@ -7,26 +7,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      bb: web
+      app: config1
   template:
     metadata:
       labels:
-        bb: web
+        app: config1
     spec:
       containers:
       - name: config1
         image: "mkdockerhub1310/msbootcampactivity_2020:config1"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: config1
-  namespace: default
-spec:
-  type: NodePort
-  selector:
-    bb: web
-  ports:
-  - port: 8888
-    targetPort: 8888
-    nodePort: 30001
+        ports:
+        - containerPort: 8888

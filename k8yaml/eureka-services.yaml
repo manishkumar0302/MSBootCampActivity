@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: eureka1
+  labels:
+    app: eureka1
+spec:
+  selector:
+    app: eureka1
+  type: NodePort 
+  ports:
+   - nodePort: 31003
+     port: 8761
+     targetPort: 8761

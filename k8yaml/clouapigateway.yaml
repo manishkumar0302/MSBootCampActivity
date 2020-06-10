@@ -7,26 +7,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      bb: web
+      app: cloudapigateway
   template:
     metadata:
       labels:
-        bb: web
+        app: cloudapigateway
     spec:
       containers:
       - name: cloudapigateway
         image: "mkdockerhub1310/msbootcampactivity_2020:cloudapigateway"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: cloudapigateway
-  namespace: default
-spec:
-  type: NodePort
-  selector:
-    bb: web
-  ports:
-  - port: 9092
-    targetPort: 9092
-    nodePort: 30001
+        ports:
+        - containerPort: 9092

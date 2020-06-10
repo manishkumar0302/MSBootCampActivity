@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: currencyms
+  labels:
+    app: currencyms
+spec:
+  selector:
+    app: currencyms
+  type: NodePort 
+  ports:
+   - nodePort: 31006
+     port: 8082
+     targetPort: 8082

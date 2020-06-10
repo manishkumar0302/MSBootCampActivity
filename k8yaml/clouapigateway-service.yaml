@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloudapigateway
+  labels:
+    app: cloudapigateway
+spec:
+  selector:
+    app: cloudapigateway
+  type: NodePort 
+  ports:
+   - nodePort: 31004
+     port: 9092
+     targetPort: 9092

@@ -7,26 +7,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      bb: web
+      app: conversionms
   template:
     metadata:
       labels:
-        bb: web
+        app: conversionms
     spec:
       containers:
       - name: conversionms
         image: "mkdockerhub1310/msbootcampactivity_2020:conversionms"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: conversionms
-  namespace: default
-spec:
-  type: NodePort
-  selector:
-    bb: web
-  ports:
-  - port: 8081
-    targetPort: 8081
-    nodePort: 30001
+        ports:
+        - containerPort: 8081

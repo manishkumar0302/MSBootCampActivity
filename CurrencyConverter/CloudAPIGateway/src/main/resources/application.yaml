@@ -21,7 +21,7 @@ eureka:
     fetchRegistry: true
     prefer-same-zone-eureka: true
     serviceUrl:
-      defaultZone: ${cloudapigateway.eureka.url:http://192.168.99.100:8761/eureka}
+      defaultZone: ${cloudapigateway.eureka.url:http://kubernetes.docker.internal:31003/eureka}
 
 management:
   endpoints:
